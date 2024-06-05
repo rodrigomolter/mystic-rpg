@@ -65,11 +65,12 @@ class Character():
     return f"Health: {self.health}\nStrengh: {self.strengh}\nDefense: {self.defense}\nLevel: {self.level}\nExp: {self.experience}\nWeapon: {self.weapon}"  
 
   def got_hit(self, amount):
-    self._health -= amount
+    if amount > 0 and self.health > 0:
+      self._health -= amount
 
   def attack(self, enemy):
     weapon_attack = 0 if self.weapon is None else self.weapon.attack
-    weapon_defense = 0 if self.weapon is None else self.weapon.defense
+    weapon_defense = 0 if enemy.weapon is None else enemy.weapon.defense
     damage = (self.strengh + weapon_attack) - (enemy.defense + weapon_defense)
     enemy.got_hit(damage)
 
