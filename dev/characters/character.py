@@ -49,7 +49,7 @@ class Character():
   
   def gain_experience(self, amount: int) -> int:
     self._experience += amount
-    if self.experience >= 100:
+    while self.experience >= 100:
       self.level_up()
 
     return self.experience
