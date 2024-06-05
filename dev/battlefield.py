@@ -1,8 +1,5 @@
-from character import Character
-from orc import Orc
-from elf import Elf
-from human import Human
-from weapons import Weapons
+from characters import *
+from items import Weapons
 
 def main():
   citizen = Character()
