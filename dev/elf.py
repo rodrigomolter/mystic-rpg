@@ -16,4 +16,4 @@ class Elf(Character):
           return 'I carry no itens for now.'
       else:
           items = ', '.join(item.name for item in self._inventory)
-          return f'For now i posses: {items.upper()}'
+          return f'For now i posses: {items}'

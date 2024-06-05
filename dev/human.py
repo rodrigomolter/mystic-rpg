@@ -16,4 +16,4 @@ class Human(Character):
           return 'My inventory is empty.'
       else:
           items = ', '.join(item.name for item in self._inventory)
-          return f'I have in my inventory a {items.upper()}'
+          return f'I have in my inventory a {items}'
