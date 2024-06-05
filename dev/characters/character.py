@@ -1,4 +1,5 @@
 from ..items.weapons import Weapons
+from typing import Self
 
 class Character():
   def __init__(self) -> None:
@@ -54,7 +55,7 @@ class Character():
 
     return self.experience
 
-  def level_up(self):
+  def level_up(self) -> None:
     if self.experience >= 100:
       self._level += 1
       self._experience -= 100
@@ -65,40 +66,42 @@ class Character():
   def status(self) -> str:
     return f"Health: {self.health}\nStrengh: {self.strengh}\nDefense: {self.defense}\nLevel: {self.level}\nExp: {self.experience}\nWeapon: {self.weapon}"  
 
-  def got_hit(self, amount):
+  def got_hit(self, amount: int) -> None:
     if amount > 0 and self.health > 0:
       self._health -= amount
 
-  def attack(self, enemy):
+  def attack(self, enemy: Self) -> None:
+    if not isinstance(enemy, Character):
+        raise TypeError("Enemy must be an instance of Character")
     weapon_attack = 0 if self.weapon is None else self.weapon.attack
     weapon_defense = 0 if enemy.weapon is None else enemy.weapon.defense
     damage = (self.strengh + weapon_attack) - (enemy.defense + weapon_defense)
     enemy.got_hit(damage)
 
   @property
-  def weapon(self):
+  def weapon(self) -> Weapons:
     return self._weapon
   
   @property
-  def defense(self):
+  def defense(self) -> int:
     return self._defense
   
   @property
-  def strengh(self):
+  def strengh(self) -> int:
     return self._strengh
   
   @property
-  def health(self):
+  def health(self) -> int:
     return self._health
   
   @property
-  def level(self):
+  def level(self) -> int:
     return self._level
   
   @property
-  def experience(self):
+  def experience(self) -> int:
     return self._experience
   
   @property
-  def inventory(self):
+  def inventory(self) -> list:
     return self._inventory

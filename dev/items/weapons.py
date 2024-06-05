@@ -6,19 +6,19 @@ class Weapons(Enum):
     DRAGON_HAMMER   = ("Dragon Hammer", 32, 11)
     BLESSED_SHIELD  = ("Blessed Shield", 10, 68)
 
-    def __init__(self, name, attack, defense):
+    def __init__(self, name, attack, defense) -> None:
         self._name = name
         self._attack = attack
         self._defense = defense
 
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
 
     @property
-    def attack(self):
+    def attack(self) -> int:
         return self._attack
 
     @property
-    def defense(self):
+    def defense(self) -> int:
         return self._defense
