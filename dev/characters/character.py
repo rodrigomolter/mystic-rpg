@@ -1,4 +1,4 @@
-from items.weapons import Weapons
+from ..items.weapons import Weapons
 
 class Character():
   def __init__(self) -> None:

@@ -1,5 +1,5 @@
-from characters import *
-from items import Weapons
+from dev.characters import *
+from dev.items import Weapons
 
 def main():
   citizen = Character()
