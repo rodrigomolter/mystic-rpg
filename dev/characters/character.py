@@ -60,6 +60,7 @@ class Character():
       self._experience -= 100
       self._defense += 3
       self._strengh += 1
+      self._health += 80
 
   def status(self) -> str:
     return f"Health: {self.health}\nStrengh: {self.strengh}\nDefense: {self.defense}\nLevel: {self.level}\nExp: {self.experience}\nWeapon: {self.weapon}"  
