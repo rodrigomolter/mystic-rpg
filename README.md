@@ -5,11 +5,11 @@ This project is designed for educational purposes to enhance skills in Python pr
 
 ## Create your own world 🗺️
 Feel free to create new characters, interate with them and make them battle. ⚔️ <br>
-The limit is your own imagination
+The limit is your own imagination.
 
 ## Pre-requirements 📋
 - [Python 3.x](https://www.python.org/downloads/) (I've used version `3.11.2` while making this project)
-- Pytest library `pip install pytest`
+- [Pytest Library](https://docs.pytest.org/en/8.2.x/index.html) - `pip install pytest`
 
 ## Running the tests ✔️
 To run the tests make sure you are in the root folder of the project and type in the terminal
